@@ -1,4 +1,3 @@
-
 <template>
   <div class="app" style="backgroundColor:#fff">
     <header class="header">
@@ -121,226 +120,43 @@
             </a>
           </div>
         </div>
-      </div>
+        <!-- 分页器 -->
+        <div class="swiper-pagination"></div>  
+       </div>
     </nav>
     <!-- 分割线 -->
     <div class="line"></div>
 
     <!-- 附近商家 -->
-    <div class="home_shop_list">
-      <div class="shop_header">
-        <img src="../../assets/images/nav/line.png" alt />
-        <span style="color:#999">附近商家</span>
-      </div>
-
-      <!-- 商家内容 -->
-      <div class="shop_container">
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-      </div>
-    </div>
+    <shop-list></shop-list>
   </div>
 </template>
 
 <script>
-export default {};
+import Swiper from 'swiper';
+import 'swiper/css/swiper.min.css'
+import ShopList from '../../components/shopList/shopList'
+export default {
+  components:{
+    ShopList
+  },
+  mounted(){
+    //创建swiper对象
+    new Swiper('.swiper-container',{
+      loop:true,
+      autoplay:true,
+      effect:'cube',
+      pagination:{
+        el:'.swiper-pagination',
+      }
+    })
+  },
+};
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
 @import '../../assets/stylus/minix.styl'
+
 // 头部
 .header {
   background-color: #02a774;
@@ -399,6 +215,7 @@ export default {};
 
   .swiper-container {
     width: 100%;
+    height:200px;
 
     .swiper-wrapper {
       width: 100%;

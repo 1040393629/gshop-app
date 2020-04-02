@@ -7,7 +7,7 @@
         </span>
       </header>
       <section class="personal_number">
-        <a href="#" class="personal_link">
+        <a href="#" class="personal_link" @click="handleLink('/login')">
           <div class="personal_img">
             <img src="../../assets/images/personal/person.png" alt />
           </div>
@@ -102,7 +102,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods:{
+    handleLink(url){
+      this.$router.push(url);
+    }
+  }
+};
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
