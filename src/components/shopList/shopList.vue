@@ -6,32 +6,31 @@
       </div>
 
       <!-- 商家内容 -->
-      <div class="shop_container">
-        <a class="shop_container_item">
+      <div class="shop_container" v-if="shops.length">
+        <a class="shop_container_item" v-for="(item,index) in shops" :key="index">
           <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
+            <img class="shop_img" :src="baseImgUrl+item.image_path" />
           </div>
           <div class="shop_right">
             <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
+              <h4 class="shop_title ellipsis">{{ item.name }}</h4>
               <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
+                <li class="supports" v-for="(element,index) in item.supports" :key="index">{{ element.icon_name }}</li>
               </ul>
             </section>
             <section class="shop_rating_order">
               <!-- 商家评分星星 -->
               <section class="shop_rating_order_left">
-                <div class="star">
+                <star :score="item.rating" :size="24"/>
+                <!-- <div class="star">
                   <img src="../../assets/images/stars/star_on.png" alt="">
                   <img src="../../assets/images/stars/star_on.png" alt="">
                   <img src="../../assets/images/stars/star_on.png" alt="">
                   <img src="../../assets/images/stars/star_half.png" alt="">
                   <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
+                </div> -->
+                <div class="rating_section" style="fontSize:12px;">{{ item.rating }}</div>
+                <div class="order_section"  style="fontSize:12px;">月售{{item.recent_order_num}}单</div>
               </section>
               <section class="shop_rating_order_right">
                 <span class="delivery_style delivery_right">仲恺专送</span>
@@ -39,175 +38,40 @@
             </section>
             <section class="shop_distance">
               <p class="shop_delivery_msg">
-                <span>¥20起送</span>
+                <span>{{item.float_minimum_order_amount}}起送</span>
                 <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
-              </p>
-            </section>
-          </div>
-        </a>
-        <a class="shop_container_item">
-          <div class="shop_left">
-            <img class="shop_img" src="../../assets/images/shop/2.jpg" />
-          </div>
-          <div class="shop_right">
-            <section class="shop_detail_header">
-              <h4 class="shop_title ellipsis">仲恺校园饭店</h4>
-              <ul class="shop_detail_ul">
-                <li class="supports">保</li>
-                <li class="supports">准</li>
-                <li class="supports">票</li>
-              </ul>
-            </section>
-            <section class="shop_rating_order">
-              <!-- 商家评分星星 -->
-              <section class="shop_rating_order_left">
-                <div class="star">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_on.png" alt="">
-                  <img src="../../assets/images/stars/star_half.png" alt="">
-                  <img src="../../assets/images/stars/star_off.png" alt="">
-                </div>
-                <div class="rating_section" style="fontSize:12px;">3.6</div>
-                <div class="order_section"  style="fontSize:12px;">月售106单</div>
-              </section>
-              <section class="shop_rating_order_right">
-                <span class="delivery_style delivery_right">仲恺专送</span>
-              </section>
-            </section>
-            <section class="shop_distance">
-              <p class="shop_delivery_msg">
-                <span>¥20起送</span>
-                <span class="segmentation">/</span>
-                <span>配送费约¥5</span>
+                <span>配送费约{{item.float_delivery_fee }}</span>
               </p>
             </section>
           </div>
         </a>
       </div>
+      <ul v-else>
+        <li v-for="(item,index) in 6" :key="index">
+          <img src="../../assets/images/shop_back.svg" alt="">
+        </li>
+      </ul>
     </div>
 </template>
 
 <script>
+
+import { mapState } from 'vuex'
+import star from '../star/star'
+
 export default {
+  name:"shopList",
+  components:{
+    star
+  },
+  data(){
+    return {
+      baseImgUrl:'http://cangdu.org:8001/img/'
+    }
+  },
+  computed:{
+    ...mapState(['shops'])
+  }
 }
 </script>
 
