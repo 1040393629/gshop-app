@@ -2,7 +2,7 @@
   <section class="login_container">
     <div class="login_inner">
       <div class="login_header">
-        <h2 class="login_logo">硅谷外卖</h2>
+        <h2 class="login_logo">仲恺外卖</h2>
         <div class="login_header_title">
           <a href="javascript:;" :class="{on:loginWay}" @click="loginWay = true">短信登录</a>
           <a href="javascript:;" :class="{on:!loginWay}" @click="loginWay = false">密码登录</a>
@@ -154,7 +154,7 @@ export default {
       let result
       //表单验证
       if(this.loginWay) {   //短信登录
-        const {phone,code} = this
+        const {rightPhone,phone,code} = this
         if(!this.rightPhone) {
           //手机号码不正确
           this.showAlert('手机号码不正确')

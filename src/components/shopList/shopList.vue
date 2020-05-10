@@ -7,7 +7,7 @@
 
       <!-- 商家内容 -->
       <div class="shop_container" v-if="shops.length">
-        <a class="shop_container_item" v-for="(item,index) in shops" :key="index">
+        <a class="shop_container_item" v-for="(item,index) in shops" :key="index" @click="$router.push({name:'goods',params:{index:index}})">
           <div class="shop_left">
             <img class="shop_img" :src="baseImgUrl+item.image_path" />
           </div>
@@ -66,7 +66,7 @@ export default {
   },
   data(){
     return {
-      baseImgUrl:'http://cangdu.org:8001/img/'
+     baseImgUrl:'https://fuss10.elemecdn.com'
     }
   },
   computed:{
@@ -91,6 +91,9 @@ export default {
       margin 30px 0
       .shop_left
         width 23%
+        .shop_img
+          width 50px
+          height 50px
       .shop_right
         float right
         width 77%

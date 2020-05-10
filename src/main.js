@@ -4,8 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import './mock/mockServer'
+import echarts from 'echarts'
 
 
+import {Button,Popup} from 'mint-ui'
+
+
+Vue.prototype.$echarts = echarts
+Vue.component(Button.name,Button)
+Vue.component(Popup.name, Popup)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

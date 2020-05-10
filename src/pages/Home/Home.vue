@@ -1,15 +1,16 @@
 <template>
   <div class="app" style="backgroundColor:#fff">
     <header class="header">
-      <span class="header_search">
+      <router-link class="header_search" to="/search">
         <i class="iconfont iconsousuo"></i>
-      </span>
+      </router-link>
       <span class="header_title">
         <span class="header_title_text ellipsis">{{this.$store.state.address.name}}</span>
       </span>
-      <span class="header_login">
-        <span class="header_login_text">登录 | 注册</span>
-      </span>
+      <router-link class="header_login" :to="userInfo.id ? '/userinfo' : '/login'">
+        <span class="header_login_text" v-if="userInfo.id == undefined">登录 | 注册</span>
+        <span v-else><i class="iconfont icongeren"></i></span>
+      </router-link>
     </header>
 
     <!-- 首页导航轮播图 -->
@@ -53,7 +54,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(["foodList"]),
+    ...mapState(['address',"foodList",'userInfo']),
     foodArr() {
       //二维食物分类
       let smallFoodArr = this.$store.state.foodList;
@@ -88,7 +89,7 @@ export default {
   },
   mounted() {
     //根据经纬度请求地址
-    this.$store.dispatch("getAddress");
+    // this.$store.dispatch("getAddress");
     this.$store.dispatch("getFoodList");
     this.$store.dispatch("getShops");
   }

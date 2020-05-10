@@ -16,7 +16,7 @@
         <span class="item_icon">
             <i class="iconfont icondingdan"></i>
         </span>
-        <span>订单</span>
+        <span>数据分析</span>
     </a>
      <a href="#" class="guide_item" :class="{on: '/personal' === $route.path}" @click="goTo('/personal')">
         <span class="item_icon">

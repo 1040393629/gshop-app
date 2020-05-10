@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div id="app">
     <section class="personal" style="width:100%">
       <header class="personal_header">
@@ -7,23 +7,23 @@
         </span>
       </header>
       <section class="personal_number">
-        <a href="#" class="personal_link" @click="handleLink('/login')">
+        <router-link href="#" class="personal_link" :to="userInfo._id == undefined ? '/login' : '/userinfo'">
           <div class="personal_img">
             <img src="../../assets/images/personal/person.png" alt />
           </div>
           <div class="user_info">
-            <p class="user_info_top">登陆/注册</p>
+            <p class="user_info_top" v-if="!userInfo.phone">{{userInfo.name || '登陆/注册'}}</p>
             <p>
               <span class="user_icon">
                 <i class="iconfont iconshouji icon_mobile"></i>
               </span>
-              <span class="icon_mobile_number">暂无绑定手机号</span>
+              <span class="icon_mobile_number">{{userInfo.phone || '暂无绑定手机号'}}</span>
             </p>
           </div>
           <span class="arrow">
             <i class="iconfont iconzuojiantou icon_arrow"></i>
           </span>
-        </a>
+        </router-link>
       </section>
       <section class="personal_info_data border-1px">
         <ul class="info_data_list">
@@ -96,16 +96,37 @@
             </span>
           </div>
         </a>
+        <section>
+          <mt-button 
+          type="danger"
+          style="width:100%;" 
+          v-if="userInfo._id"
+          @click="logout"
+          >退出登录</mt-button>
+        </section>
       </section>
     </section>
   </div>
 </template>
 
 <script>
+
+import {MessageBox,Toast} from 'mint-ui'
+import {mapState} from 'vuex'
+
 export default {
+  computed:{
+    ...mapState(['userInfo'])
+  },
   methods:{
     handleLink(url){
       this.$router.push(url);
+    },
+    logout() {
+      MessageBox.confirm('是否退出').then(action => {
+        this.$store.dispatch('logout')
+        Toast("注销成功")
+      })
     }
   }
 };
